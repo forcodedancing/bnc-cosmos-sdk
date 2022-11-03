@@ -15,6 +15,7 @@ const (
 	FixFailAckPackage    = "FixFailAckPackage"
 	BEP128               = "BEP128" //https://github.com/bnb-chain/BEPs/pull/128
 	BEP153               = "BEP153" //https://github.com/bnb-chain/BEPs/pull/153
+	BEP171               = "BEP171" //https://github.com/bnb-chain/BEPs/pull/171
 	BEP173               = "BEP173" //https://github.com/bnb-chain/BEPs/pull/173
 )
 
