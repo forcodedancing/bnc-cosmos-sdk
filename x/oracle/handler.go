@@ -126,10 +126,10 @@ func handlePackage(ctx sdk.Context, oracleKeeper Keeper, chainId sdk.ChainID, pa
 		)
 	}
 
-	cacheCtx, write := ctx.CacheContext()
-	crash, result := executeClaim(cacheCtx, crossChainApp, pack.Payload, packageType, feeAmount)
+	//cacheCtx, write := ctx.CacheContext()
+	crash, result := executeClaim(ctx, crossChainApp, pack.Payload, packageType, feeAmount)
 	if result.IsOk() {
-		write()
+		//write()
 	} else if ctx.IsDeliverTx() {
 		oracleKeeper.Metrics.ErrNumOfChannels.With("channel_id", fmt.Sprintf("%d", pack.ChannelId)).Add(1)
 		destChainName, err := oracleKeeper.ScKeeper.GetDestChainName(chainId)
