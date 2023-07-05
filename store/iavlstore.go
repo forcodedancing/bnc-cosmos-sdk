@@ -3,6 +3,7 @@ package store
 import (
 	"fmt"
 	"io"
+	"strings"
 	"sync"
 
 	"github.com/bnb-chain/ics23"
@@ -155,6 +156,10 @@ func (st *IavlStore) CacheWrapWithTrace(w io.Writer, tc TraceContext) CacheWrap 
 func (st *IavlStore) Set(key, value []byte) {
 	st.Tree.Set(key, value)
 	if st.diff != nil {
+		if strings.Contains(string(key), "globalAccountNumber") {
+			fmt.Printf("-----------------SETKEY-------------------")
+			fmt.Printf("key is: %x \n", key)
+		}
 		st.diff[string(key)] = struct{}{}
 	}
 }
