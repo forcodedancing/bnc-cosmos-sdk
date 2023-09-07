@@ -190,9 +190,9 @@ func (kb *dbKeybase) persistDerivedKey(seed []byte, passwd, name, fullHdPath str
 	// if we have a password, use it to encrypt the private key and store it
 	// else store the public key only
 	if passwd != "" {
-		info = kb.writeLocalKey(secp256k1.PrivKeySecp256k1(derivedPriv[:]), name, passwd)
+		info = kb.writeLocalKey(secp256k1.PrivKeySecp256k1(derivedPriv), name, passwd)
 	} else {
-		pubk := secp256k1.PrivKeySecp256k1(derivedPriv[:]).PubKey()
+		pubk := secp256k1.PrivKeySecp256k1(derivedPriv).PubKey()
 		info = kb.writeOfflineKey(pubk, name)
 	}
 	return

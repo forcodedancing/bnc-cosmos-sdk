@@ -5,9 +5,9 @@ go 1.19
 require (
 	github.com/bartekn/go-bip39 v0.0.0-20171116152956-a05967ea095d
 	github.com/bgentry/speakeasy v0.1.0
+	github.com/binance-chain/tss v0.1.2
+	github.com/binance-chain/tss-lib v1.0.0
 	github.com/bnb-chain/ics23 v0.1.0
-	github.com/bnb-chain/tss v0.1.3-0.20230828034805-100c015447e5
-	github.com/bnb-chain/tss-lib/v2 v2.0.0
 	github.com/btcsuite/btcd v0.23.0 // indirect
 	github.com/btcsuite/btcutil v0.0.0-20190425235716-9e5f4b9a998d // indirect
 	github.com/cosmos/go-bip39 v0.0.0-20180819234021-555e2067c45d
@@ -50,11 +50,9 @@ require (
 require (
 	contrib.go.opencensus.io/exporter/jaeger v0.2.1 // indirect
 	github.com/BurntSushi/toml v1.2.1 // indirect
-	github.com/agl/ed25519 v0.0.0-20170116200512-5312a6153412 // indirect
 	github.com/aristanetworks/goarista v0.0.0-20200805130819-fd197cf57d96 // indirect
 	github.com/benbjohnson/clock v1.3.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
-	github.com/btcsuite/btcd/btcutil v1.1.3 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/chzyer/readline v1.5.1 // indirect
 	github.com/coreos/go-semver v0.3.0 // indirect
@@ -62,7 +60,6 @@ require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/deckarep/golang-set/v2 v2.1.0 // indirect
-	github.com/decred/dcrd/dcrec/edwards/v2 v2.0.0 // indirect
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.1.0 // indirect
 	github.com/etcd-io/bbolt v1.3.3 // indirect
 	github.com/ethereum/go-ethereum v1.11.3 // indirect
@@ -231,7 +228,6 @@ require (
 )
 
 replace (
-	github.com/bnb-chain/tss => github.com/forcodedancing/tss v0.1.3-0.20230831120701-4b4fafe099c1
 	github.com/btcsuite/btcd => github.com/btcsuite/btcd v0.20.0-beta
 	github.com/grpc-ecosystem/grpc-gateway/v2 => github.com/prysmaticlabs/grpc-gateway/v2 v2.3.1-0.20210702154020-550e1cd83ec1
 	github.com/ipfs/go-datastore => github.com/ipfs/go-datastore v0.0.5
@@ -248,9 +244,7 @@ replace (
 	github.com/syndtr/goleveldb v1.0.1-0.20220721030215-126854af5e6d => github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
 	github.com/tendermint/go-amino => github.com/bnb-chain/bnc-go-amino v0.14.1-binance.2
 	github.com/tendermint/iavl => github.com/bnb-chain/bnc-tendermint-iavl v0.12.0-binance.5
-	github.com/tendermint/tendermint => github.com/bnb-chain/bnc-tendermint v0.32.3-binance.7.0.20230830064832-049f57c7d047
+	github.com/tendermint/tendermint => github.com/forcodedancing/bnc-tendermint v0.32.3-binance.7.0.20230907083418-b0df288a83e5
 	github.com/zondax/ledger-cosmos-go => github.com/bnb-chain/ledger-cosmos-go v0.9.10-0.20230201065744-d644bede1667
 	golang.org/x/crypto => github.com/bnb-chain/tendermint-crypto v0.0.0-20230703075311-6ffc0fd47894
 )
-
-exclude github.com/bnb-chain/tss-lib v1.3.5

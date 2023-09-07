@@ -7,7 +7,6 @@ import (
 	"math/big"
 
 	"github.com/cosmos/cosmos-sdk/bsc/rlp"
-	"github.com/tendermint/tendermint/crypto/secp256k1"
 	"golang.org/x/crypto/sha3"
 )
 
@@ -161,18 +160,18 @@ func (h *Header) GetSignature() ([]byte, error) {
 	return signature, nil
 }
 
-func (h *Header) ExtractSignerFromHeader(chainID *big.Int) (signer Address, err error) {
-	signature, err := h.GetSignature()
-	if err != nil {
-		return
-	}
-	pubKey, err := secp256k1.RecoverPubkey(SealHash(h, chainID).Bytes(), signature)
-	if err != nil {
-		return
-	}
-	copy(signer[:], Keccak256(pubKey[1:])[12:])
-	return
-}
+//func (h *Header) ExtractSignerFromHeader(chainID *big.Int) (signer Address, err error) {
+//	signature, err := h.GetSignature()
+//	if err != nil {
+//		return
+//	}
+//	pubKey, err := secp256k1.RecoverPubkey(SealHash(h, chainID).Bytes(), signature)
+//	if err != nil {
+//		return
+//	}
+//	copy(signer[:], Keccak256(pubKey[1:])[12:])
+//	return
+//}
 
 // Keccak256 calculates and returns the Keccak256 hash of the input data.
 func Keccak256(data ...[]byte) []byte {

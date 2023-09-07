@@ -1,9 +1,9 @@
 package crypto
 
 import (
-	_ "github.com/bnb-chain/tss-lib/v2/ecdsa/signing"
-	"github.com/bnb-chain/tss/client"
-	"github.com/bnb-chain/tss/common"
+	_ "github.com/binance-chain/tss-lib/ecdsa/signing"
+	"github.com/binance-chain/tss/client"
+	"github.com/binance-chain/tss/common"
 	"github.com/ipfs/go-log"
 	"github.com/spf13/viper"
 

@@ -1,7 +1,7 @@
 package keys
 
 import (
-	"github.com/bnb-chain/tss/client"
+	"github.com/binance-chain/tss/client"
 
 	"github.com/tendermint/tendermint/crypto"
 

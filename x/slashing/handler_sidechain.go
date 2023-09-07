@@ -17,7 +17,7 @@ func handleMsgBscSubmitEvidence(ctx sdk.Context, msg MsgBscSubmitEvidence, k Kee
 		return ErrInvalidSideChainId(DefaultCodespace).Result()
 	}
 
-	chainID, err := SideChainIdFromText(sideChainId)
+	_, err = SideChainIdFromText(sideChainId)
 	if err != nil {
 		return ErrInvalidEvidence(DefaultCodespace, err.Error()).Result()
 	}
@@ -29,11 +29,11 @@ func handleMsgBscSubmitEvidence(ctx sdk.Context, msg MsgBscSubmitEvidence, k Kee
 	var err2 error
 
 	if sdk.IsUpgrade(sdk.FixDoubleSignChainId) {
-		sideConsAddr, err = msg.Headers[0].ExtractSignerFromHeader(chainID)
-		sideConsAddr2, err2 = msg.Headers[1].ExtractSignerFromHeader(chainID)
+		//sideConsAddr, err = msg.Headers[0].ExtractSignerFromHeader(chainID)
+		//sideConsAddr2, err2 = msg.Headers[1].ExtractSignerFromHeader(chainID)
 	} else {
-		sideConsAddr, err = msg.Headers[0].ExtractSignerFromHeader(nil)
-		sideConsAddr2, err2 = msg.Headers[1].ExtractSignerFromHeader(nil)
+		//sideConsAddr, err = msg.Headers[0].ExtractSignerFromHeader(nil)
+		//sideConsAddr2, err2 = msg.Headers[1].ExtractSignerFromHeader(nil)
 	}
 	if err != nil {
 		return ErrInvalidEvidence(DefaultCodespace, fmt.Sprintf("Failed to extract signer from block header, %s", err.Error())).Result()
